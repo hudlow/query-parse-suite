@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 while read query do
   curl "http://localhost:1866?$query"
