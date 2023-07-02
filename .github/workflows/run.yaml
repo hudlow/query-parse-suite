@@ -18,7 +18,7 @@ jobs:
     - run: node index.js &
     - id: test-query-parsing
       working-directory: .
-      run: echo "result=$(./test-queries)" >> $GITHUB_OUTPUT
+      run: echo "results=$(./test-queries)" >> $GITHUB_OUTPUT
   render-test-suite:
     runs-on: ubuntu-latest
     needs:
