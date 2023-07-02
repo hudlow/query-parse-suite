@@ -1,0 +1,14 @@
+{
+  "frameworks": [
+    {
+      "name": "node-express",
+      "rows": 2,
+      "queries": [
+        {
+          "queryString": "?foo=bar",
+          "json": "{ \"foo\": \"bar\" }"
+        }
+      ]
+    }
+  ]
+}
