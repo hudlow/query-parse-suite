@@ -6,5 +6,5 @@ outputs:
 runs:
   using: composite
   steps:
-    - id: collect-results
-      run: curl "http://localhost:1866?cast_to_boolean"
+  - id: collect-results
+    run: curl "http://localhost:1866?cast_to_boolean"

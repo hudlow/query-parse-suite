@@ -1,4 +1,4 @@
 #!/bin/zsh
 
-cd ${0:a:h}
+cd ${0:a:h} # script directory
 npm install

@@ -4,12 +4,12 @@ on: [push]
 jobs:
   node-express:
     runs-on: ubuntu-latest
+    working-directory: node-express
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
       with:
         node-version: '18'
-    - working-directory: node-express
     - run: npm install
     - run: node index.js &
     - uses: ./.github/actions/test.yaml
