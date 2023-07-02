@@ -2,10 +2,10 @@ name: Test query parsing
 description: Test query parsing behavior for a framework
 outputs:
   results:
-    value: ${{ steps.collect-results.outputs.results }}
+    value: ${{ steps.collect-results.outputs.result }}
 runs:
   using: composite
   steps:
   - id: collect-results
     shell: bash
-    run: curl "http://localhost:1866?cast_to_boolean"
+    run: echo "result=$(curl "http://localhost:1866?cast_to_boolean")" >> $GITHUB_OUTPUT
