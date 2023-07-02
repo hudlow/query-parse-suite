@@ -5,8 +5,9 @@ jobs:
   node-express:
     runs-on: ubuntu-latest
     defaults:
-      shell: zsh
-      working-directory: node-express
+      run:
+        shell: zsh
+        working-directory: node-express
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
