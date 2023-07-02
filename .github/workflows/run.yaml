@@ -10,7 +10,7 @@ jobs:
       with:
         node-version: '18'
     - run: cd node-express; npm install
-    - run: node index.js &
+    - run: cd node-express; node index.js &
     - run: curl "http://localhost:3000?cast_to_boolean"
   render-test-suite:
     runs-on: ubuntu-latest
