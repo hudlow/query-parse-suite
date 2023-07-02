@@ -8,7 +8,7 @@ jobs:
       results: ${{ steps.test-query-parsing.outputs.results }}
     defaults:
       run:
-        working-directory: node-express
+        working-directory: frameworks/node-express
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
@@ -17,7 +17,8 @@ jobs:
     - run: npm install
     - run: node index.js &
     - id: test-query-parsing
-      uses: ./.github/actions/test-query-parsing
+      working-directory: .
+      run: echo "result=$(./test-queries)" >> $GITHUB_OUTPUT
   render-test-suite:
     runs-on: ubuntu-latest
     needs:
