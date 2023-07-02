@@ -1,0 +1,10 @@
+name: Test query parsing
+description: Test query parsing behavior for a framework
+outputs:
+  results:
+    value: ${{ steps.collect-results.outputs.results }}
+runs:
+  using: composite
+  steps:
+    - id: collect-results
+      run: curl "http://localhost:1866?cast_to_boolean"

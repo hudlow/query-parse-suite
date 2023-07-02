@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+cd ${0:a:h} # script directory
+node index.js &

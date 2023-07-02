@@ -9,9 +9,10 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: '18'
-    - run: cd node-express; npm install
-    - run: cd node-express; node index.js &
-    - run: curl "http://localhost:3000?cast_to_boolean"
+    - working-directory: node-express
+    - run: npm install
+    - run: node index.js &
+    - uses: ./.github/actions/test.yaml
   render-test-suite:
     runs-on: ubuntu-latest
     steps:
