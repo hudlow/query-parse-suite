@@ -4,7 +4,9 @@ on: [push]
 jobs:
   node-express:
     runs-on: ubuntu-latest
-    working-directory: node-express
+    defaults:
+      shell: zsh
+      working-directory: node-express
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
