@@ -7,4 +7,5 @@ runs:
   using: composite
   steps:
   - id: collect-results
+    shell: bash
     run: curl "http://localhost:1866?cast_to_boolean"
