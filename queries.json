@@ -8,7 +8,7 @@
   "array[]=first&array=second",
   "string=one%20two",
   "string=\"one%20two\"",
-  "string=%22one%two%22",
+  "string=%22one%20two%22",
   "string=%27one%20two%27",
   "cast_to_integer=100",
   "cast_to_integer=100.0",
