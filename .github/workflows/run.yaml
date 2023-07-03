@@ -42,6 +42,7 @@ jobs:
         name: node-express-results
         path: results.json
   publish:
+    runs-on: ubuntu-latest
     needs:
     - node-express
     - php-vanilla
