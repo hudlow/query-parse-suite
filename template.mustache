@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Query Parsing Suite</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fonts.css">
+  </head>
+  <body>
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <th>Query string</th>
+            {{#frameworks}}
+            <th>{{.}}</th>
+            {{#frameworks}}
+          </tr>
+        </thead>
+        <tbody>
+          {{#results}}
+          <tr>
+            {{#query}}
+            {{#frameworks}}
+            <td>{{.}}</td>
+            {{/frameworks}}
+          </tr>
+          {{/results}}
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

@@ -39,7 +39,7 @@ jobs:
     - name: Save php-vanilla results
       uses: actions/upload-artifact@v3
       with:
-        name: node-express-results
+        name: php-vanilla-results
         path: results.json
   publish:
     runs-on: ubuntu-latest
@@ -50,3 +50,8 @@ jobs:
     - uses: actions/checkout@v3
     - uses: actions/download-artifact@v3
     - run: ./render
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@v4.4.2
+      with:
+        folder: publish
+
