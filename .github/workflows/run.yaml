@@ -35,7 +35,7 @@ jobs:
     - run: ./serve
     - id: run-tests
       working-directory: .
-      run: mkdir results; ./run > results/results.json
+      run: ./run > results.json
     - name: Save php-vanilla results
       uses: actions/upload-artifact@v3
       with:
