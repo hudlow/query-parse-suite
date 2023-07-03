@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Query Parsing Suite</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fonts.css">
+  </head>
+  <body>
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <th>Query string</th>
+            <th>Node &#x2F; Express</th>
+            <th>PHP (vanilla)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>foo&#x3D;1</td>
+            <td>{
+  &quot;query&quot;: &quot;foo&#x3D;1&quot;,
+  &quot;result&quot;: {
+    &quot;foo&quot;: &quot;1&quot;
+  }
+}</td>
+            <td>{
+  &quot;query&quot;: &quot;foo&#x3D;1&quot;,
+  &quot;result&quot;: {
+    &quot;foo&quot;: &quot;1&quot;
+  }
+}</td>
+          </tr>
+          <tr>
+            <td>bar&#x3D;true</td>
+            <td>{
+  &quot;query&quot;: &quot;bar&#x3D;true&quot;,
+  &quot;result&quot;: {
+    &quot;bar&quot;: &quot;true&quot;
+  }
+}</td>
+            <td>{
+  &quot;query&quot;: &quot;bar&#x3D;true&quot;,
+  &quot;result&quot;: {
+    &quot;bar&quot;: &quot;true&quot;
+  }
+}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
