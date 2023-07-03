@@ -11,8 +11,15 @@ for (const index in queries) {
       JSON.stringify(nodeExpressResults[index]),
       JSON.stringify(phpVanillaResults[index])
     ]
-  }
+  };
 }
+
+console.log(JSON.stringify(
+  {
+    frameworks: ["Node / Express", "PHP (vanilla)"],
+    results
+  }
+));
 
 process.stdout.write(JSON.stringify(
   {
