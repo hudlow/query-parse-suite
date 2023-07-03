@@ -22,6 +22,7 @@ jobs:
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4.4.2
       with:
+        branch: main
         folder: results
         target-folder: node-express
   php-vanilla:
@@ -39,5 +40,6 @@ jobs:
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4.4.2
       with:
+        branch: main
         folder: results
-        target-folder: php-vanilla
+        target-folder: results/php-vanilla
