@@ -1,1 +1,0 @@
-[{"query":"foo=1","result":{"foo":1}},{"query":"bar=true","result":{"bar":true}}]

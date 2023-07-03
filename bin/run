@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cd $(dirname "$0") # script directory
+cd ..
+npm install --silent
+node resources/run-queries.js

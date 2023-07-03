@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cd $(dirname "$0") # script directory
+cd ..
+npm install
+
+node resources/prepare.js | ./node_modules/.bin/mustache - resources/template.mustache > publish/index.html
