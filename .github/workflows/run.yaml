@@ -18,13 +18,12 @@ jobs:
     - run: ./serve
     - id: run-tests
       working-directory: .
-      run: mkdir results; ./run > results/results.json
-    - name: Deploy to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@v4.4.2
+      run: ./run > results.json
+    - name: Archive code coverage results
+      uses: actions/upload-artifact@v3
       with:
-        branch: main
-        folder: results
-        target-folder: results/node-express
+        name: node-express-results
+        path: results.json
   php-vanilla:
     runs-on: ubuntu-latest
     defaults:
@@ -37,9 +36,15 @@ jobs:
     - id: run-tests
       working-directory: .
       run: mkdir results; ./run > results/results.json
-    - name: Deploy to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@v4.4.2
+    - name: Archive code coverage results
+      uses: actions/upload-artifact@v3
       with:
-        branch: main
-        folder: results
-        target-folder: results/php-vanilla
+        name: node-express-results
+        path: results.json
+  publish:
+    needs:
+    - node-express
+    - php-vanilla
+    steps:
+    - uses: actions/download-artifact@v3
+    - run: ./render
