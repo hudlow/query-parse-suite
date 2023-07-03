@@ -15,7 +15,8 @@ jobs:
     - run: npm install
     - run: node index.js &
     - id: run-tests
-      run: node ../../run-queries.js > results.json
+      working-directory: .
+      run: node run-queries.js > frameworks/node-express/results.json
     - run: git add results.json
     - run: git commit -m "Update node-express results"
     - run: git push
