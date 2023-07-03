@@ -19,21 +19,530 @@
         </thead>
         <tbody>
           <tr>
-            <td>foo&#x3D;1</td>
+            <td>first&#x3D;hello%20world</td>
             <td><span class="hljs-punctuation">{</span>
-  <span class="hljs-attr">&quot;foo&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;1&quot;</span>
+  <span class="hljs-attr">&quot;first&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;hello world&quot;</span>
 <span class="hljs-punctuation">}</span></td>
             <td><span class="hljs-punctuation">{</span>
-  <span class="hljs-attr">&quot;foo&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;1&quot;</span>
+  <span class="hljs-attr">&quot;first&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;hello world&quot;</span>
 <span class="hljs-punctuation">}</span></td>
           </tr>
           <tr>
-            <td>bar&#x3D;true</td>
+            <td>second&#x3D;hello+world</td>
             <td><span class="hljs-punctuation">{</span>
-  <span class="hljs-attr">&quot;bar&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;true&quot;</span>
+  <span class="hljs-attr">&quot;second&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;hello world&quot;</span>
 <span class="hljs-punctuation">}</span></td>
             <td><span class="hljs-punctuation">{</span>
-  <span class="hljs-attr">&quot;bar&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;true&quot;</span>
+  <span class="hljs-attr">&quot;second&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;hello world&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>third%20&#x3D;sup</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;third &quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;sup&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;third_&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;sup&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>&amp;&#x3D;&amp;garbage&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&amp;&#x3D;&#x3D;&#x3D;&amp;&amp;&amp;&amp;&#x3D;&#x3D;&amp;&amp;and&#x3D;99</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;garbage&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;====&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;and&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;99&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;garbage&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;====&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;and&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;99&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>order&#x3D;first&amp;order&#x3D;second</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;order&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-string">&quot;first&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">&quot;second&quot;</span>
+  <span class="hljs-punctuation">]</span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;order&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;second&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>array[]&#x3D;first&amp;array[]&#x3D;second</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;array&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-string">&quot;first&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">&quot;second&quot;</span>
+  <span class="hljs-punctuation">]</span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;array&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-string">&quot;first&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">&quot;second&quot;</span>
+  <span class="hljs-punctuation">]</span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>array[]&#x3D;first&amp;array&#x3D;second</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;array&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-string">&quot;first&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">&quot;second&quot;</span>
+  <span class="hljs-punctuation">]</span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;array&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;second&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>string&#x3D;one%20two</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;string&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;one two&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;string&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;one two&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>string&#x3D;&quot;one%20two&quot;</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;string&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;\&quot;one two\&quot;&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;string&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;\&quot;one two\&quot;&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>string&#x3D;%22one%two%22</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;string&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;%22one%two%22&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;string&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;\&quot;one%two\&quot;&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>string&#x3D;%27one%20two%27</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;string&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;&#x27;one two&#x27;&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;string&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;&#x27;one two&#x27;&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_integer&#x3D;100</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_integer&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">100</span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_integer&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">100</span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_integer&#x3D;100.0</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_integer&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">100</span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_integer&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">100</span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_integer&#x3D;1e2</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_integer&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">1</span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_integer&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">100</span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_integer&#x3D;%20100</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_integer&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">100</span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_integer&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">100</span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_float&#x3D;100</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_float&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">100</span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_float&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">100</span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_float&#x3D;100.0</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_float&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">100</span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_float&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">100</span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_float&#x3D;1e2</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_float&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">100</span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_float&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">100</span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_float&#x3D;%20100</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_float&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">100</span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_float&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">100</span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_boolean&#x3D;true</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_boolean&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_boolean&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_boolean&#x3D;True</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_boolean&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_boolean&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_boolean&#x3D;TRUE</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_boolean&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_boolean&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_boolean&#x3D;tRuE</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_boolean&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_boolean&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_boolean&#x3D;%20true</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_boolean&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_boolean&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_boolean&#x3D;1</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_boolean&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_boolean&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_boolean&#x3D;10</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_boolean&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_boolean&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_boolean&#x3D;yes</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_boolean&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_boolean&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_boolean&#x3D;on</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_boolean&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_boolean&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_boolean&#x3D;null</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_boolean&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_boolean&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_date_time&#x3D;1990-12-31T23:59:60Z</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">null</span></span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;1991-01-01T00:00:00.000Z&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_date_time&#x3D;1990-12-31T15:59:60-08:00</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">null</span></span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;1990-12-31T16:00:00.000Z&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_date_time&#x3D;2023-01-01</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2023-01-01T00:00:00.000Z&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2023-01-01T00:00:00.000Z&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_date_time&#x3D;2023-01-01</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2023-01-01T00:00:00.000Z&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2023-01-01T00:00:00.000Z&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_date_time&#x3D;2023-01-01</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2023-01-01T00:00:00.000Z&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2023-01-01T00:00:00.000Z&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_date_time&#x3D;2023-02-29</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2023-03-01T00:00:00.000Z&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2023-03-01T00:00:00.000Z&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_date_time&#x3D;01&#x2F;01&#x2F;2023</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2023-01-01T00:00:00.000Z&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2023-01-01T00:00:00.000Z&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_date_time&#x3D;01&#x2F;01&#x2F;2023</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2023-01-01T00:00:00.000Z&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2023-01-01T00:00:00.000Z&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_date_time&#x3D;2023-07-03T16:15:00Z</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2023-07-03T16:15:00.000Z&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2023-07-03T16:15:00.000Z&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_date_time&#x3D;Mon,%2003%20Jul%202023%2016:15:00%20+0000</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2023-07-03T16:15:00.000Z&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;0000-07-03T16:15:00.000Z&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_date_time&#x3D;Monday,%2003-Jul-23%2016:15:00%20GMT</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2023-07-03T16:15:00.000Z&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2023-07-03T16:15:00.000Z&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_date_time&#x3D;Mon,%2003%20Jul%2023%2016:15:00%20+0000</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2023-07-03T16:15:00.000Z&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;0000-07-03T16:15:00.000Z&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_date_time&#x3D;Mon,%2003%20Jul%202023%2016:15:00%20+0000</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2023-07-03T16:15:00.000Z&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;0000-07-03T16:15:00.000Z&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_date_time&#x3D;2023-07-03T16:15:00+00:00</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">null</span></span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">null</span></span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_date_time&#x3D;Mon%20Jul%20%203%2016:15:00%202023</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2023-07-03T16:15:00.000Z&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2023-07-03T16:15:00.000Z&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_date_time&#x3D;1685900100</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">null</span></span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">null</span></span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_date_time&#x3D;2023-07-03%2016:15:00</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2023-07-03T16:15:00.000Z&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2023-07-03T16:15:00.000Z&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_date_time&#x3D;20230703161500</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">null</span></span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2023-07-03T16:15:00.000Z&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_date_time&#x3D;2023-07-03T16:15:00.000Z</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2023-07-03T16:15:00.000Z&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2023-07-03T16:15:00.000Z&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_date_time&#x3D;2023-07-03T16:15:00+00:00</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">null</span></span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">null</span></span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_date_time&#x3D;Mon%20Jul%203%2016:15:00%20CDT%202023</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2023-07-03T21:15:00.000Z&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2023-07-03T16:15:00.000Z&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_date_time&#x3D;2023:07:03%2016:15:00</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">null</span></span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2023-07-03T16:15:00.000Z&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_date_time&#x3D;July%203,%202023,%204:15%20PM</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2023-07-03T16:15:00.000Z&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2023-07-03T16:15:00.000Z&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_date_time&#x3D;3%20July%202023%2016:15</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2023-07-03T16:15:00.000Z&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2023-07-03T16:15:00.000Z&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_date_time&#x3D;2023-07-03T16:15:00</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2023-07-03T16:15:00.000Z&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2023-07-03T16:15:00.000Z&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_date_time&#x3D;now</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">null</span></span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2023-07-03T20:31:22.643Z&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_date_time&#x3D;yesterday</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">null</span></span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2023-07-02T00:00:00.000Z&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+          </tr>
+          <tr>
+            <td>cast_to_date_time&#x3D;next%20tuesday</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">null</span></span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;cast_to_date_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2023-07-04T00:00:00.000Z&quot;</span>
 <span class="hljs-punctuation">}</span></td>
           </tr>
         </tbody>
