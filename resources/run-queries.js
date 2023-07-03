@@ -1,5 +1,5 @@
 import fetch from 'node-fetch';
-import queries from './queries.json' assert { type: 'json' };
+import queries from '../queries.json' assert { type: 'json' };
 
 (async () => {
   try {
