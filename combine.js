@@ -8,22 +8,16 @@ for (const index in queries) {
   results[index] = {
     query: queries[index],
     frameworks: [
-      JSON.stringify(nodeExpressResults[index]),
-      JSON.stringify(phpVanillaResults[index])
+      JSON.stringify(nodeExpressResults[index], null, 2),
+      JSON.stringify(phpVanillaResults[index], null, 2)
     ]
   };
 }
 
-console.log(JSON.stringify(
-  {
-    frameworks: ["Node / Express", "PHP (vanilla)"],
-    results
-  }
-));
 
 process.stdout.write(JSON.stringify(
   {
     frameworks: ["Node / Express", "PHP (vanilla)"],
     results
   }
-));
+) + "\n");

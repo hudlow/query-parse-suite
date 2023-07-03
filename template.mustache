@@ -13,13 +13,13 @@
             <th>Query string</th>
             {{#frameworks}}
             <th>{{.}}</th>
-            {{#frameworks}}
+            {{/frameworks}}
           </tr>
         </thead>
         <tbody>
           {{#results}}
           <tr>
-            {{#query}}
+            <td>{{query}}</td>
             {{#frameworks}}
             <td>{{.}}</td>
             {{/frameworks}}

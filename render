@@ -3,5 +3,4 @@
 cd $(dirname "$0") # script directory
 npm install
 
-mkdir pages
 node combine.js | ./node_modules/.bin/mustache - template.mustache > publish/index.html
