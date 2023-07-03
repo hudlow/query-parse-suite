@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd ${0:a:h} # script directory
+cd $(dirname "$0") # script directory
 npm install

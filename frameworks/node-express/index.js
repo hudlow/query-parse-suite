@@ -20,12 +20,10 @@ app.get('/', (request, response) => {
       value = date.toJSON();
     }
 
-    parameters[param] = JSON.stringify(value);
+    parameters[param] = value;
   }
 
   response.send(JSON.stringify(parameters) + "\n");
 });
 
-app.listen(port, () => {
-  console.log(`Listening on port ${port}`);
-});
+app.listen(port, () => {});
