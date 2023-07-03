@@ -24,7 +24,7 @@ jobs:
       with:
         branch: main
         folder: results
-        target-folder: node-express
+        target-folder: results/node-express
   php-vanilla:
     runs-on: ubuntu-latest
     defaults:
