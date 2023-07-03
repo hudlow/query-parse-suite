@@ -16,6 +16,8 @@ jobs:
     - run: node index.js &
     - id: run-tests
       run: ../../run > results.json
+    - run: git config user.email "querybot@hudlow.org"
+    - run: git config user.name "Query Bot"
     - run: git add results.json
     - run: git commit -m "Update node-express results"
     - run: git push
