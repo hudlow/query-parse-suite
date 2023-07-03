@@ -1,5 +1,0 @@
-#!/bin/bash
-
-while read query; do
-  curl "http://localhost:1866?$query"
-done < queries.txt
