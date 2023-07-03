@@ -1,5 +1,0 @@
-#!/bin/bash
-
-cd $(dirname "$0") # script directory
-npm install --silent
-node run-queries.js
