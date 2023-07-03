@@ -19,7 +19,7 @@ jobs:
     - id: run-tests
       working-directory: .
       run: ./run > results.json
-    - name: Archive code coverage results
+    - name: Save node-express results
       uses: actions/upload-artifact@v3
       with:
         name: node-express-results
@@ -36,7 +36,7 @@ jobs:
     - id: run-tests
       working-directory: .
       run: mkdir results; ./run > results/results.json
-    - name: Archive code coverage results
+    - name: Save php-vanilla results
       uses: actions/upload-artifact@v3
       with:
         name: node-express-results
@@ -47,5 +47,6 @@ jobs:
     - node-express
     - php-vanilla
     steps:
+    - uses: actions/checkout@v3
     - uses: actions/download-artifact@v3
     - run: ./render
