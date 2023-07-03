@@ -1,7 +1,56 @@
 body {
-  font-family: monospace;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 16px;
+  background-color: #fff;
+}
+
+table {
+  border-spacing: 8px;
+  border-collapse: separate;
 }
 
 th {
   padding-right: 64px;
+  color: #586e75;
+}
+
+td {
+  white-space: pre;
+  padding: 8px;
+  background-color: #f4f6f6;
+  border: 1px solid #bcc8c8;
+  cell-spacing: 4px;
+  vertical-align: top;
+}
+
+td:first-child {
+  font-weight: bold;
+  color: #586e75;
+  border: none;
+  background: none;
+  vertical-align: middle;
+}
+
+.hljs-attr {
+  color: #2aa198;
+}
+
+.hljs-literal {
+  color: #b58900;
+}
+
+.hljs-string {
+  color: #6c71c4;
+}
+
+.hljs-number {
+  color: #d33682;
+}
+
+.hljs-keyword {
+  font-weight: bold;
+}
+
+.hljs-punctuation {
+  color: #93a1a1;
 }

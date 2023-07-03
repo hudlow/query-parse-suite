@@ -2,49 +2,39 @@
 <html>
   <head>
     <title>Query Parsing Suite</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="fonts.css">
   </head>
   <body>
     <div>
       <table>
         <thead>
           <tr>
-            <th>Query string</th>
-            <th>Node &#x2F; Express</th>
+            <th></th>
+            <th>Node (Express)</th>
             <th>PHP (vanilla)</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>foo&#x3D;1</td>
-            <td>{
-  &quot;query&quot;: &quot;foo&#x3D;1&quot;,
-  &quot;result&quot;: {
-    &quot;foo&quot;: &quot;1&quot;
-  }
-}</td>
-            <td>{
-  &quot;query&quot;: &quot;foo&#x3D;1&quot;,
-  &quot;result&quot;: {
-    &quot;foo&quot;: &quot;1&quot;
-  }
-}</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;foo&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;1&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;foo&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;1&quot;</span>
+<span class="hljs-punctuation">}</span></td>
           </tr>
           <tr>
             <td>bar&#x3D;true</td>
-            <td>{
-  &quot;query&quot;: &quot;bar&#x3D;true&quot;,
-  &quot;result&quot;: {
-    &quot;bar&quot;: &quot;true&quot;
-  }
-}</td>
-            <td>{
-  &quot;query&quot;: &quot;bar&#x3D;true&quot;,
-  &quot;result&quot;: {
-    &quot;bar&quot;: &quot;true&quot;
-  }
-}</td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;bar&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;true&quot;</span>
+<span class="hljs-punctuation">}</span></td>
+            <td><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;bar&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;true&quot;</span>
+<span class="hljs-punctuation">}</span></td>
           </tr>
         </tbody>
       </table>
