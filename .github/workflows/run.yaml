@@ -31,7 +31,6 @@ jobs:
         working-directory: frameworks/php-vanilla
     steps:
     - uses: actions/checkout@v3
-    - run: ./setup
     - run: ./serve
     - id: run-tests
       working-directory: .
@@ -40,6 +39,22 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: php-vanilla-results
+        path: results.json
+  python-django:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frameworks/python-django
+    steps:
+    - uses: actions/checkout@v3
+    - run: ./serve
+    - id: run-tests
+      working-directory: .
+      run: ./bin/run > results.json
+    - name: Save python-django results
+      uses: actions/upload-artifact@v3
+      with:
+        name: python-django-results
         path: results.json
   publish:
     runs-on: ubuntu-latest
