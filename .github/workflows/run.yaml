@@ -47,6 +47,10 @@ jobs:
         working-directory: frameworks/python-django
     steps:
     - uses: actions/checkout@v3
+    - uses: actions/setup-python@v2
+      with:
+         python-version: 3.8
+    - run: ./setup
     - run: ./serve
     - id: run-tests
       working-directory: .
