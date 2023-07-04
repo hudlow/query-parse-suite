@@ -61,6 +61,7 @@ jobs:
     needs:
     - node-express
     - php-vanilla
+    - python-django
     steps:
     - uses: actions/checkout@v3
     - uses: actions/download-artifact@v3
