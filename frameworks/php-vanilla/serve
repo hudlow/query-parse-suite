@@ -1,4 +1,4 @@
 #!/bin/bash
 
 cd $(dirname "$0") # script directory
-php -S localhost:1866 &
+php -S 127.0.0.1:1866 &
