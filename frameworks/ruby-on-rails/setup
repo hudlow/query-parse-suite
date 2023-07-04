@@ -1,3 +1,4 @@
 #!/bin/bash
 
-gem install rails
+cd $(dirname "$0")
+bundle install
