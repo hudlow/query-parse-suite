@@ -7,7 +7,7 @@ import queries from '../queries.json' assert { type: 'json' };
     let frameworkResults = [];
 
     for (const index in queries) {
-      responses[index] = fetch('http://localhost:1866?' + queries[index]);
+      responses[index] = fetch('http://127.0.0.1:1866?' + queries[index]);
     }
 
     for (const index in queries) {
