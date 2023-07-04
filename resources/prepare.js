@@ -1,7 +1,7 @@
 import hljs from 'highlight.js';
 import queries from '../queries.json' assert { type: 'json' };
 import nodeExpressResults from '../node-express-results/results.json' assert { type: 'json' };
-import phpVanillaResults from '../php-vanilla-results/results.json' assert { type: 'json' };\
+import phpVanillaResults from '../php-vanilla-results/results.json' assert { type: 'json' };
 import pythonDjangoResults from '../python-django-results/results.json' assert { type: 'json' };
 
 let results = [];
