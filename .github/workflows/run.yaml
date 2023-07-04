@@ -4,6 +4,25 @@ on: [push]
 permissions:
   contents: write
 jobs:
+  go-vanilla:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frameworks/go-vanilla
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-go@v4
+      with:
+        go-version: '1.19.3'
+    - run: ./serve
+    - id: run-tests
+      working-directory: .
+      run: ./bin/run > results.json
+    - name: Save go-vanilla results
+      uses: actions/upload-artifact@v3
+      with:
+        name: go-vanilla-results
+        path: results.json
   node-express:
     runs-on: ubuntu-latest
     defaults:

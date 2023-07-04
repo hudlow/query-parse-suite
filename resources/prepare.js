@@ -1,5 +1,6 @@
 import hljs from 'highlight.js';
 import queries from '../queries.json' assert { type: 'json' };
+import goVanillaResults from '../go-vanilla-results/results.json' assert { type: 'json' };
 import nodeExpressResults from '../node-express-results/results.json' assert { type: 'json' };
 import phpVanillaResults from '../php-vanilla-results/results.json' assert { type: 'json' };
 import pythonDjangoResults from '../python-django-results/results.json' assert { type: 'json' };
@@ -16,6 +17,7 @@ for (const index in queries) {
   results[index] = {
     query: queries[index],
     frameworks: [
+      renderResult(goVanillaResults[index].result),
       renderResult(nodeExpressResults[index].result),
       renderResult(phpVanillaResults[index].result),
       renderResult(pythonDjangoResults[index].result),
@@ -28,6 +30,7 @@ for (const index in queries) {
 process.stdout.write(JSON.stringify(
   {
     frameworks: [
+      "Go (Vanilla)",
       "Node (Express)",
       "PHP (vanilla)",
       "Python (Django)",
