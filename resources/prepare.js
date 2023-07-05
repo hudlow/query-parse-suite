@@ -1,4 +1,5 @@
-import commonmark from 'commonmark';
+import fs from 'fs';
+import * as commonmark from "commonmark";
 import hljs from 'highlight.js';
 import yaml from 'yaml';
 import goVanillaResults from '../go-vanilla-results/results.json' assert { type: 'json' };
@@ -13,7 +14,7 @@ var writer = new commonmark.HtmlRenderer();
 
 const file = fs.readFileSync('./queries.yaml', 'utf8');
 const queries = yaml.parse(file);
-let results = [];
+let sections = {};
 
 function renderResult(object) {
   const json = JSON.stringify(object, null, 2);
@@ -21,15 +22,22 @@ function renderResult(object) {
 }
 
 function renderCommonMark(text) {
- const parsed = reader.parse(text);
- return writer.render(parsed);
+  if (typeof text === 'string') {
+    const parsed = reader.parse(text);
+    return writer.render(parsed);
+  } else {
+    return '';
+  }
 }
 
 for (const index in queries) {
-  if (!results[queries[index].section]) {
-    results[queries[index].section] = [];
+  if (!sections[queries[index].section]) {
+    sections[queries[index].section] = {
+      name: queries[index].section,
+      results: []
+    };
   }
-  results[queries[index].section].push({
+  sections[queries[index].section].results.push({
     query: queries[index].query,
     description: renderCommonMark(queries[index].description),
     frameworks: [
@@ -54,6 +62,6 @@ process.stdout.write(JSON.stringify(
       "Python (Django)",
       "Ruby (on Rails)"
     ],
-    results
+    sections: Object.values(sections)
   }
 ) + "\n");

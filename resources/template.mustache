@@ -10,9 +10,10 @@
   <body>
     <div>
       <table>
+        {{#sections}}
         <thead>
           <tr>
-            <th></th>
+            <th>{{name}}:</th>
             {{#frameworks}}
             <th>{{.}}</th>
             {{/frameworks}}
@@ -21,13 +22,17 @@
         <tbody>
           {{#results}}
           <tr>
-            <td>{{query}}</td>
+            <td>
+              <div>{{query}}</div>
+              {{{description}}}
+            </td>
             {{#frameworks}}
             <td>{{{.}}}</td>
             {{/frameworks}}
           </tr>
           {{/results}}
         </tbody>
+        {{/sections}}
       </table>
     </div>
   </body>

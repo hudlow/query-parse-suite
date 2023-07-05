@@ -12,6 +12,10 @@ table {
 th {
   padding-right: 64px;
   color: #586e75;
+  padding-top: 32px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #586e75;
+  text-align: left;
 }
 
 td {
@@ -21,14 +25,32 @@ td {
   border: 1px solid #bcc8c8;
   cell-spacing: 4px;
   vertical-align: top;
+  line-height: 1.5em;
 }
 
 td:first-child {
-  font-weight: bold;
+  white-space: normal;
   color: #586e75;
-  border: none;
   background: none;
-  vertical-align: middle;
+  border: 1px solid #bcc8c8;
+}
+
+td div {
+  white-space: pre;
+  display: block;
+  font-weight: bold;
+}
+
+td p {
+  margin: 0;
+  padding: 0;
+  padding-top: 1.5em;
+}
+
+code {
+  background-color: #f4f6f6;
+  border: 1px solid #bcc8c8;
+  padding: 0 2px;
 }
 
 .hljs-attr {
