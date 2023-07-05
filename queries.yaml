@@ -1,0 +1,161 @@
+- query: first=hello%20world
+  section: general
+- query: second=hello+world
+  section: general
+  description: test handling of `+`
+- query: third%20=sup
+  section: general
+- query: &=&garbage=====&===&&&&==&&and=99
+  section: general
+- query: order=first&order=second
+  section: precedence
+- query: array[]=first&array[]=second
+  section: arrays
+- query: array[]=first&array=second
+  section: arrays
+- query: string=one%20two
+  section: strings
+- query: string=\"one%20two\"
+  section: strings
+- query: string=%22one%20two%22
+  section: strings
+- query: strings=%27one%20two%27
+  section: strings
+- query: cast_to_integer=100
+  section: integers
+- query: cast_to_integer=100.0
+  section: integers
+- query: cast_to_integer=1e2
+  section: integers
+- query: cast_to_integer=%20100
+  section: integers
+- query: cast_to_float=100
+  section: floats
+- query: cast_to_float=100.0
+  section: floats
+- query: cast_to_float=100.5
+  section: floats
+- query: cast_to_float=100.5
+  section: floats
+- query: cast_to_float=1.5e2
+  section: floats
+- query: cast_to_float=%20100.5
+  section: floats
+- query: cast_to_boolean=true
+  section: booleans
+- query: cast_to_boolean=false
+  section: booleans
+- query: cast_to_boolean=True
+  section: booleans
+- query: cast_to_boolean=False
+  section: booleans
+- query: cast_to_boolean=TRUE
+  section: booleans
+- query: cast_to_boolean=FALSE
+  section: booleans
+- query: cast_to_boolean=tRuE
+  section: booleans
+- query: cast_to_boolean=fAlSe
+  section: booleans
+- query: cast_to_boolean=t
+  section: booleans
+- query: cast_to_boolean=f
+  section: booleans
+- query: cast_to_boolean=T
+  section: booleans
+- query: cast_to_boolean=F
+  section: booleans
+- query: cast_to_boolean=%20true
+  section: booleans
+- query: cast_to_boolean=%20false
+  section: booleans
+- query: cast_to_boolean=1
+  section: booleans
+- query: cast_to_boolean=0
+  section: booleans
+- query: cast_to_boolean=10
+  section: booleans
+- query: cast_to_boolean=-1
+  section: booleans
+- query: cast_to_boolean=yes
+  section: booleans
+- query: cast_to_boolean=no
+  section: booleans
+- query: cast_to_boolean=on
+  section: booleans
+- query: cast_to_boolean=off
+  section: booleans
+- query: cast_to_boolean=null
+  section: booleans
+- query: cast_to_boolean=undefined
+  section: booleans
+- query: cast_to_boolean=NaN
+  section: booleans
+- query: cast_to_boolean=
+  section: booleans
+- query: cast_to_boolean
+  section: booleans
+- query: cast_to_boolean&hello
+  section: booleans
+- query: cast_to_boolean={}
+  section: booleans
+- query: cast_to_boolean=[]
+  section: booleans
+- query: cast_to_boolean=,
+  section: booleans
+- query: cast_to_date_time=1990-12-31T23:59:60Z
+  section: date-time values
+- query: cast_to_date_time=1990-12-31T15:59:60-08:00
+  section: date-time values
+- query: cast_to_date_time=2023-01-01
+  section: date-time values
+- query: cast_to_date_time=2023-01-01
+  section: date-time values
+- query: cast_to_date_time=2023-01-01
+  section: date-time values
+- query: cast_to_date_time=2023-02-29
+  section: date-time values
+- query: cast_to_date_time=01/01/2023
+  section: date-time values
+- query: cast_to_date_time=01/01/2023
+  section: date-time values
+- query: cast_to_date_time=2023-07-03T16:15:00Z
+  section: date-time values
+- query: cast_to_date_time=Mon,%2003%20Jul%202023%2016:15:00%20%2b0000
+  section: date-time values
+- query: cast_to_date_time=Monday,%2003-Jul-23%2016:15:00%20GMT
+  section: date-time values
+- query: cast_to_date_time=Mon,%2003%20Jul%2023%2016:15:00%20%2b0000
+  section: date-time values
+- query: cast_to_date_time=Mon,%2003%20Jul%202023%2016:15:00%20%2b0000
+  section: date-time values
+- query: cast_to_date_time=2023-07-03T16:15:00%2b00:00
+  section: date-time values
+- query: cast_to_date_time=Mon%20Jul%20%203%2016:15:00%202023
+  section: date-time values
+- query: cast_to_date_time=1685900100
+  section: date-time values
+- query: cast_to_date_time=2023-07-03%2016:15:00
+  section: date-time values
+- query: cast_to_date_time=20230703161500
+  section: date-time values
+- query: cast_to_date_time=2023-07-03T16:15:00.000Z
+  section: date-time values
+- query: cast_to_date_time=2023-07-03T16:15:00%2b00:00
+  section: date-time values
+- query: cast_to_date_time=Mon%20Jul%203%2016:15:00%20CDT%202023
+  section: date-time values
+- query: cast_to_date_time=2023:07:03%2016:15:00
+  section: date-time values
+- query: cast_to_date_time=July%203,%202023,%204:15%20PM
+  section: date-time values
+- query: cast_to_date_time=3%20July%202023%2016:15
+  section: date-time values
+- query: cast_to_date_time=2023-07-03T16:15:00
+  section: date-time values
+- query: cast_to_date_time=now
+  section: date-time values
+- query: cast_to_date_time=yesterday
+  section: date-time values
+- query: cast_to_date_time=next%20monday
+  section: date-time values

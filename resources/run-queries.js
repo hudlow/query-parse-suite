@@ -1,5 +1,9 @@
 import fetch from 'node-fetch';
-import queries from '../queries.json' assert { type: 'json' };
+import fs from 'fs';
+import yaml from 'yaml';
+
+const file = fs.readFileSync('./queries.yaml', 'utf8');
+const queries = yaml.parse(file);
 
 (async () => {
   try {
@@ -7,7 +11,7 @@ import queries from '../queries.json' assert { type: 'json' };
     let frameworkResults = [];
 
     for (const index in queries) {
-      responses[index] = fetch('http://127.0.0.1:1866?' + queries[index]);
+      responses[index] = fetch('http://127.0.0.1:1866?' + queries[index].query);
     }
 
     for (const index in queries) {
@@ -16,7 +20,7 @@ import queries from '../queries.json' assert { type: 'json' };
       const result = response.ok ? await response.json() : 'error parsing parameters';
 
       frameworkResults[index] = {
-        query: queries[index],
+        query: queries[index].query,
         result
       }
     }
