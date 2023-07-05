@@ -11,7 +11,6 @@ import queries from '../queries.json' assert { type: 'json' };
     }
 
     for (const index in queries) {
-      console.log(queries[index]);
       const response = await responses[index];
 
       const result = response.ok ? await response.json() : '"error"';
@@ -24,7 +23,7 @@ import queries from '../queries.json' assert { type: 'json' };
 
     process.stdout.write(JSON.stringify(frameworkResults) + "\n");
   } catch (error) {
-    console.error(error);
+    process.stdout.write(JSON.stringify(error));
   }
 })();
 
