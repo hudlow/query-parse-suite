@@ -7,25 +7,30 @@ def index(request):
   parameters = {}
   for param in request.GET:
     parameters[param] = request.GET.get(param)
+    status = 200
 
     if (param == 'cast_to_integer'):
       try:
         parameters[param] = int(parameters[param])
       except:
         parameters[param] = None
+        status = 400
     if (param == 'cast_to_float'):
       try:
         parameters[param] = float(parameters[param])
       except:
         parameters[param] = None
+        status = 400
     if (param == 'cast_to_boolean'):
       try:
         parameters[param] = bool(parameters[param])
       except:
         parameters[param] = None
+        status = 400
     if (param == 'cast_to_date_time'):
       try:
         parameters[param] = datetime.fromisoformat(parameters[param]).astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3]+'Z'
       except:
         parameters[param] = None
-  return JsonResponse(parameters)
+        status = 400
+  return JsonResponse(parameters, status=status)
