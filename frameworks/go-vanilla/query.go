@@ -25,6 +25,7 @@ func QueryParser(w http.ResponseWriter, r *http.Request) {
         parameters[param] = newValue
       } else {
         parameters[param] = nil
+        w.WriteHeader(http.StatusBadRequest)
       }
     } else if (param == "cast_to_float") {
       newValue, err := strconv.ParseFloat(parameters[param].(string), 64)
@@ -33,6 +34,7 @@ func QueryParser(w http.ResponseWriter, r *http.Request) {
         parameters[param] = newValue
       } else {
         parameters[param] = nil
+        w.WriteHeader(http.StatusBadRequest)
       }
     } else if (param == "cast_to_boolean") {
       newValue, err := strconv.ParseBool(parameters[param].(string))
@@ -41,6 +43,7 @@ func QueryParser(w http.ResponseWriter, r *http.Request) {
         parameters[param] = newValue
       } else {
         parameters[param] = nil
+        w.WriteHeader(http.StatusBadRequest)
       }
     } else if (param == "cast_to_date_time") {
       newValue, err := time.Parse(time.RFC3339, parameters[param].(string))
@@ -49,11 +52,16 @@ func QueryParser(w http.ResponseWriter, r *http.Request) {
         parameters[param] = newValue.Format("2006-01-02T15:04:05.000Z")
       } else {
         parameters[param] = nil
+        w.WriteHeader(http.StatusBadRequest)
       }
     }
   }
 
-  jsonString, _ := json.Marshal(parameters)
+  jsonString, err := json.Marshal(parameters)
+
+  if (err != nil) {
+    w.WriteHeader(http.StatusBadRequest)
+  }
 
   fmt.Fprintf(w, string(jsonString))
 }
