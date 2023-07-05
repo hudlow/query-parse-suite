@@ -28,30 +28,14 @@ public class QueryApplication {
 
     for (Map.Entry<String,String> param : allRequestParams.entrySet()) {
 			if (param.getKey().equals("cast_to_integer")) {
-				try {
-			  	parameters.put(param.getKey(), Integer.valueOf(param.getValue()));
-				} catch (Exception exception) {
-					parameters.put(param.getKey(), null);
-				}
+			  parameters.put(param.getKey(), Integer.valueOf(param.getValue()));
 			} else if (param.getKey().equals("cast_to_float")) {
-				try {
-					parameters.put(param.getKey(), Double.valueOf(param.getValue()));
-				} catch (Exception exception) {
-					parameters.put(param.getKey(), null);
-				}
+				parameters.put(param.getKey(), Double.valueOf(param.getValue()));
 			} else if (param.getKey().equals("cast_to_boolean")) {
-				try {
-					parameters.put(param.getKey(), Boolean.valueOf(param.getValue()));
-				} catch (Exception exception) {
-					parameters.put(param.getKey(), null);
-				}
+				parameters.put(param.getKey(), Boolean.valueOf(param.getValue()));
 			} else if (param.getKey().equals("cast_to_date_time")) {
-				try {
-					ZonedDateTime datetime = ZonedDateTime.parse(param.getValue()).withZoneSameInstant(ZoneId.of("UTC"));
-					parameters.put(param.getKey(), datetime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")));
-				} catch (Exception exception) {
-					parameters.put(param.getKey(), null);
-				}
+				ZonedDateTime datetime = ZonedDateTime.parse(param.getValue()).withZoneSameInstant(ZoneId.of("UTC"));
+				parameters.put(param.getKey(), datetime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")));
 			} else {
 				parameters.put(param.getKey(), param.getValue());
 			}
