@@ -11,7 +11,11 @@ import queries from '../queries.json' assert { type: 'json' };
     }
 
     for (const index in queries) {
-      const result = await (await responses[index]).json();
+      console.log(queries[index]);
+      const response = await responses[index];
+
+      const result = response.ok ? await response.json() : '"error"';
+
       frameworkResults[index] = {
         query: queries[index],
         result
