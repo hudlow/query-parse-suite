@@ -23,7 +23,8 @@
           {{#results}}
           <tr>
             <td>
-              <div>{{query}}</div>
+              <div>{{#querySegments}}{{#amp}}<span class="hljs-punctuation">{{amp}}</span>{{/amp}}{{#name}}<span class="hljs-attr" title="{{decodedName}}">{{name}}</span>{{/name}}{{#eq}}<span class="hljs-punctuation">{{eq}}</span>{{/eq}}{{#value}}<span class="hljs-string" title="{{decodedValue}}">{{value}}</span>{{/value}}{{/querySegments}}
+              </div>
               {{{description}}}
             </td>
             {{#frameworks}}

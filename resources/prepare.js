@@ -21,6 +21,24 @@ function renderResult(object) {
   return hljs.highlight(json, {language: 'json'}).value;
 }
 
+function decomposeQuery(query) {
+  return (
+    [...query.matchAll(/(?<amp>&|^)(?<name>[^&=]*)(?<eq>=)?(?<value>[^&]*)/g)]
+    .map(result => ({
+      amp: result.groups.amp,
+      name: result.groups.name,
+      eq: result.groups.eq,
+      value: result.groups.value,
+      decodedName: decodeURI(result.groups.name),
+      decodedValue: decodeURI(result.groups.value)
+    }))
+  );
+}
+
+function htmlEncode(string) {
+  return rawStr.replace(/[\u00A0-\u9999<>\&]/g, ((i) => `&#${i.charCodeAt(0)};`));
+}
+
 function renderCommonMark(text) {
   if (typeof text === 'string') {
     const parsed = reader.parse(text);
@@ -39,6 +57,7 @@ for (const index in queries) {
   }
   sections[queries[index].section].results.push({
     query: queries[index].query,
+    querySegments: decomposeQuery(queries[index].query),
     description: renderCommonMark(queries[index].description),
     frameworks: [
       renderResult(goVanillaResults[index].result),
@@ -50,7 +69,6 @@ for (const index in queries) {
     ]
   });
 }
-
 
 process.stdout.write(JSON.stringify(
   {
