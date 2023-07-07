@@ -35,6 +35,14 @@ td:first-child {
   border: 1px solid #bcc8c8;
 }
 
+td:first-child .hljs-string,
+td:first-child .hljs-attr {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 0px 2px;
+  margin: 0 2px;
+}
+
 td div {
   white-space: pre;
   display: block;
