@@ -22,7 +22,8 @@ td {
   white-space: pre;
   padding: 8px;
   background-color: #f4f6f6;
-  border: 1px solid #bcc8c8;
+  border: 1px solid #e4e6e6;
+  border-top-width: 4px;
   cell-spacing: 4px;
   vertical-align: top;
   line-height: 1.5em;
@@ -32,11 +33,16 @@ td:first-child {
   white-space: normal;
   color: #586e75;
   background: none;
-  border: 1px solid #bcc8c8;
+}
+
+td .error {
+  text-align: center;
 }
 
 td:first-child .hljs-string,
-td:first-child .hljs-attr {
+td:first-child .hljs-attr,
+code {
+  background: #f6f8f8;
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 0px 2px;
@@ -52,12 +58,6 @@ td p {
   margin: 0;
   padding: 0;
   padding-top: 1.5em;
-}
-
-code {
-  background-color: #f4f6f6;
-  border: 1px solid #bcc8c8;
-  padding: 0 2px;
 }
 
 .hljs-attr {

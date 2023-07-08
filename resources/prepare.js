@@ -1,4 +1,5 @@
 import fs from 'fs';
+import crypto from 'crypto';
 import * as commonmark from "commonmark";
 import hljs from 'highlight.js';
 import yaml from 'yaml';
@@ -16,9 +17,28 @@ const file = fs.readFileSync('./queries.yaml', 'utf8');
 const queries = yaml.parse(file);
 let sections = {};
 
+function hue(value) {
+  return parseInt(md5(value).substring(0, 8), 16) % 360;
+}
+
 function renderResult(object) {
   const json = JSON.stringify(object, null, 2);
-  return hljs.highlight(json, {language: 'json'}).value;
+  let render = hljs.highlight(json, {language: 'json'}).value;
+  let hueValue = hue(json);
+
+  if (json === '"error parsing parameters"') {
+    render = '<div class="error">&#9888;&#65039; parse error</div>';
+    hueValue = 0;
+  }
+
+  return {
+    json: render,
+    hue: hueValue
+  }
+}
+
+function md5(value) {
+  return crypto.createHash('md5').update(value).digest("hex");
 }
 
 function decomposeQuery(query) {
@@ -33,10 +53,6 @@ function decomposeQuery(query) {
       decodedValue: decodeURI(result.groups.value)
     }))
   );
-}
-
-function htmlEncode(string) {
-  return rawStr.replace(/[\u00A0-\u9999<>\&]/g, ((i) => `&#${i.charCodeAt(0)};`));
 }
 
 function renderCommonMark(text) {
