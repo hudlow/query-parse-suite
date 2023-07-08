@@ -25,15 +25,18 @@ function renderResult(object) {
   const json = JSON.stringify(object, null, 2);
   let render = hljs.highlight(json, {language: 'json'}).value;
   let hueValue = hue(json);
+  let kind = "json";
 
   if (json === '"error parsing parameters"') {
-    render = '<div class="error">&#9888;&#65039; parse error</div>';
+    render = '&#9888;&#65039;';
     hueValue = 0;
+    kind = 'error';
   }
 
   return {
     json: render,
-    hue: hueValue
+    hue: hueValue,
+    kind
   }
 }
 
