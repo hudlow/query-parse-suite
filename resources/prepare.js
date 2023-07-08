@@ -49,8 +49,8 @@ function decomposeQuery(query) {
       name: result.groups.name,
       eq: result.groups.eq,
       value: result.groups.value,
-      decodedName: decodeURI(result.groups.name),
-      decodedValue: decodeURI(result.groups.value)
+      decodedName: decodeURIComponent(result.groups.name),
+      decodedValue: decodeURIComponent(result.groups.value)
     }))
   );
 }
