@@ -15,7 +15,7 @@
   section: arrays
 - query: string=one%20two
   section: strings
-- query: string=\"one%20two\"
+- query: string="one%20two"
   section: strings
 - query: string=%22one%20two%22
   section: strings
