@@ -4,6 +4,23 @@ on: [push]
 permissions:
   contents: write
 jobs:
+  dotnet-minimal:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frameworks/dotnet-minimal
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 7.0.x
+    - run: ./serve
+    - working-directory: .
+      run: ./bin/run > results.json
+    - uses: actions/upload-artifact@v3
+      with:
+        name: dotnet-minimal-results
+        path: results.json
   go-vanilla:
     runs-on: ubuntu-latest
     defaults:

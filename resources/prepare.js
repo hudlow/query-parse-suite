@@ -3,6 +3,7 @@ import crypto from 'crypto';
 import * as commonmark from "commonmark";
 import hljs from 'highlight.js';
 import yaml from 'yaml';
+import dotnetMinimalResults from '../dotnet-minimal-results/results.json' assert { type: 'json' };
 import goVanillaResults from '../go-vanilla-results/results.json' assert { type: 'json' };
 import javaSpringResults from '../java-spring-results/results.json' assert { type: 'json' };
 import nodeExpressResults from '../node-express-results/results.json' assert { type: 'json' };
@@ -79,6 +80,7 @@ for (const index in queries) {
     querySegments: decomposeQuery(queries[index].query),
     description: renderCommonMark(queries[index].description),
     frameworks: [
+      renderResult(dotnetMinimalResults[index].result),
       renderResult(goVanillaResults[index].result),
       renderResult(javaSpringResults[index].result),
       renderResult(nodeExpressResults[index].result),
@@ -92,6 +94,7 @@ for (const index in queries) {
 process.stdout.write(JSON.stringify(
   {
     frameworks: [
+      ".NET (minimal)",
       "Go (vanilla)",
       "Java (Spring)",
       "Node (Express)",
