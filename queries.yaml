@@ -5,6 +5,10 @@
   description: test handling of `+`
 - query: third%20=sup
   section: general
+- query: first=hello%26world
+  seciton: general
+- query: first=hello\&world
+  seciton: general
 - query: '&=&garbage=====&===&&&&==&&and=99'
   section: general
 - query: order=first&order=second
@@ -29,17 +33,21 @@
   section: integers
 - query: cast_to_integer=%20100
   section: integers
+- query: cast_to_integer=+100
+  section: integers
 - query: cast_to_float=100
   section: floats
 - query: cast_to_float=100.0
   section: floats
 - query: cast_to_float=100.5
   section: floats
-- query: cast_to_float=100.5
+- query: cast_to_float=-100.5
   section: floats
 - query: cast_to_float=1.5e2
   section: floats
 - query: cast_to_float=%20100.5
+  section: floats
+- query: cast_to_float=+100.5
   section: floats
 - query: cast_to_boolean=true
   section: booleans
