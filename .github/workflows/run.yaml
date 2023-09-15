@@ -125,6 +125,23 @@ jobs:
       with:
         name: ruby-on-rails-results
         path: results.json
+  whatwg-url:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frameworks/whatwg-url
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+    - run: ./serve
+    - working-directory: .
+      run: ./bin/run > results.json
+    - uses: actions/upload-artifact@v3
+      with:
+        name: whatwg-url-results
+        path: results.json
   publish:
     runs-on: ubuntu-latest
     needs:

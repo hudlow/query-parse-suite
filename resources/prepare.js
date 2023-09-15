@@ -10,6 +10,7 @@ import nodeExpressResults from '../node-express-results/results.json' assert { t
 import phpVanillaResults from '../php-vanilla-results/results.json' assert { type: 'json' };
 import pythonDjangoResults from '../python-django-results/results.json' assert { type: 'json' };
 import rubyOnRailsResults from '../ruby-on-rails-results/results.json' assert { type: 'json' };
+import whatwgURLResults from '../whatwg-url-results/results.json' assert { type: 'json' };
 
 var reader = new commonmark.Parser();
 var writer = new commonmark.HtmlRenderer();
@@ -86,7 +87,8 @@ for (const index in queries) {
       renderResult(nodeExpressResults[index].result),
       renderResult(phpVanillaResults[index].result),
       renderResult(pythonDjangoResults[index].result),
-      renderResult(rubyOnRailsResults[index].result)
+      renderResult(rubyOnRailsResults[index].result),
+      renderResult(whatwgURLResults[index].result)
     ]
   });
 }
@@ -100,7 +102,8 @@ process.stdout.write(JSON.stringify(
       "Node (Express)",
       "PHP (vanilla)",
       "Python (Django)",
-      "Ruby (on Rails)"
+      "Ruby (on Rails)",
+      "WHATWG URL"
     ],
     sections: Object.values(sections)
   }

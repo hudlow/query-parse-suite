@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd $(dirname "$0") # script directory
+node index.js &
