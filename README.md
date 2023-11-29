@@ -26,7 +26,7 @@ Instructions for using the suite vary depending on the specific language or fram
 Contributions to the Query Parse Suite are welcome. Please submit pull requests with your proposed changes or enhancements.
 
 ## License
-[Apache-2.0 license](./LICENSE.md)
+[Apache-2.0 license](./LICENSE)
 
 ## Contact
 For questions or feedback regarding the Query Parse Suite, please open an issue in the GitHub repository.
