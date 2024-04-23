@@ -13,6 +13,12 @@
   section: arrays
 - query: array[]=first&array=second
   section: arrays
+- query: array[0]=first&array[1]=second
+  section: arrays
+- query: array[1]=first&array[2]=second
+  section: arrays
+- query: array[1]=first&array[5]=second
+  section: arrays
 - query: foo.one=1&foo.two=2
   section: objects
 - query: foo[one]=1&foo[two]=2
