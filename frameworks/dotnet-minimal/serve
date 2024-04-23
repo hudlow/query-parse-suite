@@ -3,3 +3,4 @@
 cd $(dirname "$0") # script directory
 dotnet build
 dotnet run --no-build &
+sleep 10
