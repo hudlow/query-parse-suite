@@ -13,6 +13,10 @@
   section: arrays
 - query: array[]=first&array=second
   section: arrays
+- query: foo.one=1&foo.two=2
+  section: objects
+- query: foo[one]=1&foo[two]=2
+  section: objects
 - query: string=one%20two
   section: strings
 - query: string="one%20two"
