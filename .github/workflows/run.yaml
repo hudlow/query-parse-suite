@@ -5,7 +5,7 @@ permissions:
   contents: write
 jobs:
   dotnet-minimal:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     defaults:
       run:
         working-directory: frameworks/dotnet-minimal
