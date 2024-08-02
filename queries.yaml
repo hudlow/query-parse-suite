@@ -5,6 +5,9 @@
   description: test handling of `+`
 - query: third%20=sup
   section: general
+- query: 'value='
+  description: empty
+  section: general
 - query: '&=&garbage=====&===&&&&==&&and=99'
   section: general
 - query: order=first&order=second
